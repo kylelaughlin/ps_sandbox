@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payment_spring_id: MyString
+  name: MyString
+  amount: 1
+  frequency: MyString
+
+two:
+  payment_spring_id: MyString
+  name: MyString
+  amount: 1
+  frequency: MyString
