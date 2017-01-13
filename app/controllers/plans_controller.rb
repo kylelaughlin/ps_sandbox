@@ -22,6 +22,10 @@ class PlansController < ApplicationController
 
   end
 
+  def plan_billed
+    puts params
+  end
+
   private
 
   def plan_params
