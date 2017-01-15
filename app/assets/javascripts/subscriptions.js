@@ -4,9 +4,9 @@
 
 $(document).on("turbolinks:load", function(){
 
-  $('form').submit(function (e) {
+  $('#subscription_form').submit(function (e) {
     e.preventDefault();
-
+    alert("start js");
 
     var cardOwnerName = $("#card_owner_name").val();
     var cardNumber = $("#number").val();

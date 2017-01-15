@@ -1,6 +1,6 @@
 <h1>New Subscription</h1>
 
-<%= form_tag "/subscriptions" do %>
+<%= form_tag "/subscriptions", :id => "subscription_form" do %>
 
   <div>
     <%= collection_radio_buttons(:plan, :plan_id, @plans, :id, :name) %>
@@ -29,5 +29,5 @@
 
   <input type="hidden" id="ps_public_key" value="<%= ENV["PAYMENTSPRING_PUBLIC_KEY"]%>">
 
-  <input type="submit" class="submit" value="Submit Payment">
+  <input type="submit" class="submit" value="Submit Payment" id="subscription_submit">
 <% end %>
