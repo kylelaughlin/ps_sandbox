@@ -1,0 +1,33 @@
+<h1>New Subscription</h1>
+
+<%= form_tag "/subscriptions", :id => "subscription_form" do %>
+
+  <div>
+    <%= collection_radio_buttons(:plan, :plan_id, @plans, :id, :name) %>
+  </div>
+
+  <div>
+    <label for="card_owner_name">Name as it appears on your card</label>
+    <input type=text id="card_owner_name">
+  </div>
+
+  <div>
+    <label for="number">Card Number</label>
+    <input type="text" id="number" size="20">
+  </div>
+
+  <div>
+    <label for="exp">Expiration (MM/YYYY)</label>
+    <input type="text" size="2" id="exp_month">
+    <input type="text" size="4" id="exp_year">
+  </div>
+
+  <div>
+    <label for="csc">CSC</label>
+    <input type="text" size="4" id="csc">
+  </div>
+
+  <input type="hidden" id="ps_public_key" value="<%= ENV["PAYMENTSPRING_PUBLIC_KEY"]%>">
+
+  <input type="submit" class="submit" value="Submit Payment" id="subscription_submit">
+<% end %>

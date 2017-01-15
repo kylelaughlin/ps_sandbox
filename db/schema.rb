@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112194113) do
+ActiveRecord::Schema.define(version: 20170113221934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "plans", force: :cascade do |t|
+    t.string   "payment_spring_id"
+    t.string   "name"
+    t.integer  "amount"
+    t.string   "frequency"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -33,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170112194113) do
     t.string   "customer_id"
     t.string   "plan_id"
     t.datetime "active_until"
+    t.datetime "ends_after"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

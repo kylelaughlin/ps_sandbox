@@ -1,0 +1,7 @@
+<ul>
+  <% @plans.each do |plan| %>
+    <li><%= plan.name %> <%= money(plan.amount) %> Billing Frequency: <%= plan.frequency %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New Plan", new_plan_path %>

@@ -1,0 +1,22 @@
+<%= form_for @plan do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name, "Plan name" %>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :amount, "Price per bill in cents" %>
+    <%= f.number_field :amount %>
+  </div>
+
+  <div class="form-group">
+    <%=f.label :frequency, "Billing Frequency" %>
+    <%=f.select(:frequency, ["daily", "weekly", "monthly", "quarterly", "yearly"], prompt: "Please select frequency") %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>

@@ -50,4 +50,15 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
+<% if Date.today <= current_user.ends_after %>
+
+  <p>You are currently subscribed to the <%=current_user.plan.name%> plan.</p>
+  <p>This plan will expire on <%=current_user.ends_after.strftime("%m/%d/%Y")%></p>
+
+<% else %>
+
+  <p><%= link_to "Click here to subscribe", new_subscription_path %></p>
+
+<% end %>
+
 <%= link_to "Back", :back %>

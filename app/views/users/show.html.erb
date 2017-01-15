@@ -1,1 +1,11 @@
 <h1>Hello</h1>
+
+<% if current_user.ends_after && Date.today <= current_user.ends_after %>
+  <h3><%= @plan.name %> This would show content appropriate for this plan</h3>
+<% else %>
+  <% if current_user.ends_after %>
+    <p>Your subscription ended on <%=current_user.ends_after.strftime("%m/%d/%y") %></p>
+  <% else %>
+    <%= link_to "Subscribe", new_subscription_path %>
+  <% end %>
+<% end %>
